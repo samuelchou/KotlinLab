@@ -1,12 +1,12 @@
-package studio.ultoolapp.kotlinlab
+package studio.ultoolapp.kotlinlab.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import studio.ultoolapp.kotlinlab.ui.ActivityBmi
+import studio.ultoolapp.kotlinlab.R
 
-class MainActivity : AppCompatActivity() {
+class ActivityMain : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
