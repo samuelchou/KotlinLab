@@ -7,17 +7,27 @@
     tools:context=".ui.ActivityBmi">
 
     <TextView
+        android:id="@+id/textMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/msg_bmi"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/titleHeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <TextView
         android:id="@+id/titleHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:labelFor="@id/editTextHeight"
         android:text="@string/title_height"
         app:layout_constraintBottom_toTopOf="@+id/titleWeight"
         app:layout_constraintEnd_toStartOf="@+id/editTextHeight"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textMessage" />
 
     <TextView
         android:id="@+id/titleWeight"

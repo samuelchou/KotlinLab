@@ -4,4 +4,5 @@
     <string name="action_help">help</string>
     <string name="title_height">Height:</string>
     <string name="title_weight">"Weight: "</string>
+    <string name="msg_bmi">"Your bmi is: "</string>
 </resources>
