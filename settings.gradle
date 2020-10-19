@@ -1,2 +1,3 @@
+include ':MiniKotlin'
 include ':app'
 rootProject.name = "KotlinLab"
