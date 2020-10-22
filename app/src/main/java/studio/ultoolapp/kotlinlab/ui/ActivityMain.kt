@@ -13,8 +13,9 @@ class ActivityMain : AppCompatActivity() {
         val helloWorld = "Hello WALUDO!"
         titleText.text = helloWorld
         titleText.setOnClickListener {
-            val intent = Intent(this, ActivityBmi::class.java)
-            startActivity(intent)
+            Intent(this, ActivityBmi::class.java).apply {
+                startActivity(this)
+            }
         }
     }
 }
