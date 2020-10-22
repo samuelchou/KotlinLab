@@ -5,4 +5,8 @@
     <string name="title_height">Height:</string>
     <string name="title_weight">"Weight: "</string>
     <string name="msg_bmi">"Your bmi is: "</string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
 </resources>

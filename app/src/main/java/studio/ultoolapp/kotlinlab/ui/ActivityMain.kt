@@ -17,5 +17,11 @@ class ActivityMain : AppCompatActivity() {
                 startActivity(this)
             }
         }
+        btnLogin.setOnClickListener {
+            Intent(this, ActivityLogin::class.java).apply {
+                startActivity(this)
+            }
+        }
+
     }
 }
