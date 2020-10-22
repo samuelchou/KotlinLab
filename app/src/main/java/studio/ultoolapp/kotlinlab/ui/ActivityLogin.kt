@@ -1,5 +1,6 @@
 package studio.ultoolapp.kotlinlab.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,7 @@ class ActivityLogin : AppCompatActivity() {
 
     private fun login() {
         if (editUserName.text.toString() == "Email" && editPassword.text.toString() == "Password") {
+            setResult(Activity.RESULT_OK)
             finish()
         } else {
             Toast.makeText(this, "Wrong Email or Password", Toast.LENGTH_SHORT).show()
