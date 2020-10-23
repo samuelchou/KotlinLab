@@ -5,13 +5,24 @@ import org.junit.Test
 class VarFunctionTest {
     @Test
     fun var_and_val() {
-        var rank = 3;
+        var rank = 3
         val value = 10
         println("Rank is $rank, Value is $value")
         rank = 6
         println("Rank is $rank, Value is $value")
         // value = 4 // Error: Value cannot be assigned
         // println("Rank is $rank, Value is $value")
+    }
+
+    @Test
+    fun npe_prevent() {
+        fun String.last2Char() = arrayOf(get(length - 2), get(length - 1))
+
+        var s: String? = "Vincent"
+        println(s?.last2Char()?.joinToString(",")) // 印出：n,t
+
+        s = null
+        println(s?.last2Char()?.joinToString(",")) // 印出：null
     }
 
     @Test
