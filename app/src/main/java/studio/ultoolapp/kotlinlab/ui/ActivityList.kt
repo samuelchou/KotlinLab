@@ -8,21 +8,23 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_list_example.view.*
 import studio.ultoolapp.kotlinlab.R
+import studio.ultoolapp.kotlinlab.data.SimpleItem
 import java.util.*
 
 class ActivityList : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var recyclerAdapter: RecyclerView.Adapter<*>
-    private var items = ArrayList<String>()
+    private var items = ArrayList<SimpleItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
+        items.add(SimpleItem(1, "John", "Director"))
+        items.add(SimpleItem(2, "Adam", "Artist"))
+        items.add(SimpleItem(3, "Bill", "Programmer"))
+        items.add(SimpleItem(4, "Coco", "Manager"))
+
         recyclerAdapter = getSimpleAdapter()
-        items.add("John")
-        items.add("Adam")
-        items.add("Bill")
-        items.add("Coco")
 
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView).apply {
             setHasFixedSize(true)
@@ -34,7 +36,7 @@ class ActivityList : AppCompatActivity() {
         }
     }
 
-    fun getSimpleAdapter(): RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private fun getSimpleAdapter(): RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             override fun onCreateViewHolder(
                 parent: ViewGroup,
@@ -46,7 +48,7 @@ class ActivityList : AppCompatActivity() {
             }
 
             override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-                holder.itemView.itemTitle.text = items.get(position)
+                holder.itemView.itemTitle.text = items[position].name
             }
 
             override fun getItemCount(): Int {
