@@ -33,6 +33,12 @@ class ListSetMapTest {
         for ((n, g) in grades) {
             println("$n's grade is $g")
         }
+        println()
+        println("We have another test.")
+        println()
+        for (entry in grades) {
+            println("${entry.key}'s grade is ${entry.value}")
+        }
     }
 
 }
