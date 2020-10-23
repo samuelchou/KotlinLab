@@ -9,4 +9,5 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in</string>
+    <string name="action_open_list">Open List</string>
 </resources>

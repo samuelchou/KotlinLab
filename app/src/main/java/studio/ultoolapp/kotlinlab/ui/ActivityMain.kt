@@ -28,6 +28,11 @@ class ActivityMain : AppCompatActivity() {
                 startActivityForResult(this, CODE_LOGIN)
             }
         }
+        btnList.setOnClickListener {
+            Intent(this, ActivityList::class.java).apply {
+                startActivity(this)
+            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
