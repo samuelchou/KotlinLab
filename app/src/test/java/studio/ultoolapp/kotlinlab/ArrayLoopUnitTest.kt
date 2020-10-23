@@ -5,16 +5,6 @@ import org.junit.Test
 
 class ArrayLoopUnitTest {
     @Test
-    fun array_summing() {
-        val arr = intArrayOf(30, 6, 5, 7, -2)
-        var sum = 0
-        for (i in arr) {
-            sum += i
-        }
-        assertEquals(30 + 6 + 5 + 7 - 2, sum)
-    }
-
-    @Test
     fun for_loop_testing() {
         for (i in 1..5) print("$i,") // 1, 2, 3, 4, 5
         println()
@@ -56,4 +46,48 @@ class ArrayLoopUnitTest {
 
     }
 
+    @Test
+    fun array_summing() {
+        val arr = intArrayOf(30, 6, 5, 7, -2)
+        var sum = 0
+        for (i in arr) {
+            sum += i
+        }
+        assertEquals(30 + 6 + 5 + 7 - 2, sum)
+
+        val arr2 = arrayOf("Anna", "Bonnie", "Cynthia")
+        var greetings = "Greetings, "
+        for (i in arr2.indices) {
+            greetings += arr2[i]
+            if (i != arr2.lastIndex) greetings += ", "
+        }
+        assertEquals("Greetings, Anna, Bonnie, Cynthia", greetings)
+    }
+
+    @Test
+    fun array_loop_calculation() {
+        val names = arrayOf(
+            arrayOf("Anna", "Bonnie", "Cynthia"),
+            arrayOf("Darcy", "Edison"),
+            arrayOf("Frank", "George")
+        )
+        // search for Edison
+        search@ for (i in names.indices) {
+            for (j in names[i].indices) {
+                if (names[i][j] == "Edison") {
+                    println("Found Edison in row $i, col $j.")
+                    break@search
+                }
+            }
+            println("Edison is not in row $i")
+        }
+        fun all_minus_ten(vararg scores: Int): IntArray {
+            val result = IntArray(scores.size)
+            for (i in scores.indices) {
+                result[i] = scores[i] - 10
+            }
+            return result
+        }
+        println("Modified points are: " + all_minus_ten(30, 60, 50, 0))
+    }
 }
