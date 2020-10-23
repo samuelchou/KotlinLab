@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_list_example.view.*
 import studio.ultoolapp.kotlinlab.R
 import studio.ultoolapp.kotlinlab.data.SimpleItem
+import studio.ultoolapp.kotlinlab.viewmodel.BasicRecAdapter
 import java.util.*
 
 class ActivityList : AppCompatActivity() {
@@ -24,7 +25,10 @@ class ActivityList : AppCompatActivity() {
         items.add(SimpleItem(3, "Bill", "Programmer"))
         items.add(SimpleItem(4, "Coco", "Manager"))
 
-        recyclerAdapter = getSimpleAdapter()
+//        recyclerAdapter = getSimpleAdapter()
+        recyclerAdapter = BasicRecAdapter(this).apply {
+            submitList(items)
+        }
 
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView).apply {
             setHasFixedSize(true)
