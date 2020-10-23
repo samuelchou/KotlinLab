@@ -88,6 +88,6 @@ class ArrayLoopUnitTest {
             }
             return result
         }
-        println("Modified points are: " + all_minus_ten(30, 60, 50, 0))
+        println("Modified points are: ${all_minus_ten(30, 60, 50, 0)}")
     }
 }
