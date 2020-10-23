@@ -18,7 +18,24 @@ class ActivityList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
-        recyclerAdapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+        recyclerAdapter = getSimpleAdapter()
+        items.add("John")
+        items.add("Adam")
+        items.add("Bill")
+        items.add("Coco")
+
+        recyclerView = findViewById<RecyclerView>(R.id.recyclerView).apply {
+            setHasFixedSize(true)
+
+            // use a linear layout manager
+            layoutManager = LinearLayoutManager(this@ActivityList)
+
+            adapter = recyclerAdapter
+        }
+    }
+
+    fun getSimpleAdapter(): RecyclerView.Adapter<RecyclerView.ViewHolder> {
+        return object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             override fun onCreateViewHolder(
                 parent: ViewGroup,
                 viewType: Int
@@ -36,19 +53,5 @@ class ActivityList : AppCompatActivity() {
                 return items.size
             }
         }
-        items.add("John")
-        items.add("Adam")
-        items.add("Bill")
-        items.add("Coco")
-
-        recyclerView = findViewById<RecyclerView>(R.id.recyclerView).apply {
-            setHasFixedSize(true)
-
-            // use a linear layout manager
-            layoutManager = LinearLayoutManager(this@ActivityList)
-
-            adapter = recyclerAdapter
-        }
-
     }
 }
