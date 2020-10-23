@@ -25,7 +25,7 @@ class ActivityList : AppCompatActivity() {
         items.add(SimpleItem(3, "Bill", "Programmer"))
         items.add(SimpleItem(4, "Coco", "Manager"))
 
-//        recyclerAdapter = getSimpleAdapter()
+        // recyclerAdapter = simpleAdapter
         recyclerAdapter = BasicRecAdapter(this).apply {
             submitList(items)
         }
@@ -40,8 +40,8 @@ class ActivityList : AppCompatActivity() {
         }
     }
 
-    private fun getSimpleAdapter(): RecyclerView.Adapter<RecyclerView.ViewHolder> {
-        return object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private val simpleAdapter =
+        object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             override fun onCreateViewHolder(
                 parent: ViewGroup,
                 viewType: Int
@@ -59,5 +59,4 @@ class ActivityList : AppCompatActivity() {
                 return items.size
             }
         }
-    }
 }
